@@ -1,46 +1,17 @@
-# Getting Started with Create React App
+commands used here are:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. npx create-react-app todo-app --template typescript
 
-## Available Scripts
+2. npm install uuidv4
 
-In the project directory, you can run:
+## function App() vs class App extends Component in the App.js file
 
-### `npm start`
+A functional component is just a plain JavaScript function which accepts props as an argument and returns a React element.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+A class component requires you to extend from React.Component and create a render function which returns a React element. This requires more code but will also give you some benefits.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+A functional component doesn’t have its own state. If you need a state in your component you will either need to create a class component or you lift the state up to the parent component and pass it down the functional component via props.
 
-### `npm test`
+Another feature which you cannot use in functional components are lifecycle hooks. The reason is the same as for state, all lifecycle hooks are coming from the React.Component which you extend from in class components. So if you need lifecycle hooks you should probably use a class component.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Conversely, functional components allowed to use hooks where class components are not allowed to.
