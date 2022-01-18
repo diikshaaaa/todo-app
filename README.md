@@ -15,3 +15,13 @@ A functional component doesn’t have its own state. If you need a state in your
 Another feature which you cannot use in functional components are lifecycle hooks. The reason is the same as for state, all lifecycle hooks are coming from the React.Component which you extend from in class components. So if you need lifecycle hooks you should probably use a class component.
 
 Conversely, functional components allowed to use hooks where class components are not allowed to.
+
+## ReactDom.render()
+
+In ReactDom.render() method we specify two things:
+
+1. what we want to render
+2. where we want to render
+
+eg:
+ReactDom.render(<Greeting />, document.getElementById('root');
